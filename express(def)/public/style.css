@@ -1,0 +1,617 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #E2E8F0;
+}
+body{
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+}
+section{
+    min-height: 100%;
+}
+
+
+/* text */
+.accent{
+    color:#2E3A92;
+    font-size: 2.7rem;
+}
+.textBlack{
+    color:#0d1117;
+}
+.textWhite{
+    color:#E2E8F0;
+}
+
+/* logo and name */
+.logo{
+    width: 10vw;
+    height: 100%;
+    background: url("images/logo_dark.jpg");
+    background-size: cover;
+}
+.companyName{
+    width: 8vw;
+    height: 5vw;
+    margin: 0 auto;
+    background: url("images/companyName.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* black-60: #0d1117
+white-30: #E2E8F0
+blue-10: #2E3A92 */
+
+/* header */
+.header, .footer{
+    padding: 5px;
+    width: 100vw;
+    height: 20vh;
+    display:flex;
+    gap: 5vw;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0d1117;  
+}
+.header{
+    border-bottom: 1px solid #E2E8F0;
+    font-size: 3.5rem;
+}
+.mainNav{
+    width: 70%;
+    height: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 3vw;
+    justify-content: center;
+    align-items: center; 
+}
+.mainNav a{
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s, border-bottom 0.3s; 
+}
+.mainNav a.active{
+    border-bottom: 2px solid #2E3A92;
+}
+.mainNav a:hover{
+    color: #2E3A92;
+}
+
+.footer{
+    border-top: 1px solid #E2E8F0;
+}
+
+/* home */
+.messageBlock{
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 40%;
+    width: 24%;
+    height: 12%;
+    background: #070707;
+    box-shadow: 1px 1px 8px 2px #2E3A92;
+    padding: 15px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headerContainer{
+    width: 100%;
+    height: 67vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    border: 8px solid #0d1117;
+}
+.headerContainer .backgroundVideo{
+    position: absolute;
+    z-index: 10;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.headerLetter{
+    color:#2E3A92;
+    font-size: 6rem;
+    position: relative;
+    z-index: 20;
+}
+.headerContainer > h2{
+    font-weight: 800;
+    font-size: 5.5rem;
+    border: none;
+    position: relative;
+    z-index: 20;
+    width: 35%;
+    min-height: 33.4%;
+    gap: 0;
+    background: rgba(0, 0, 0, 0.65);
+    text-align: center;
+    box-shadow: -8px 0px 12px -4px #ced0d3;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    text-shadow: 2px 2px 4px rgba(173, 181, 189, 0.5);
+}
+
+/* achievements */
+.achievements{
+    width: 100vw;
+    height: 20vw;
+    padding: 25px 50px;
+    background-color: #0d1117;
+}
+.achievements a{
+    font-weight: 600;
+    font-size: 2rem;
+}
+.infoContainer{
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.innerInfoBlocks, .specialCard{
+    box-shadow: 0px 1px 8px 2px #2E3A92;
+    background-color: #E2E8F0;
+    color:#0d1117;
+    width: 30%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 30px;
+    transition: box-shadow 0.3s;
+}
+.innerInfoBlocks:hover, .specialCard:hover{
+    box-shadow: 0px 1px 8px 2px #E2E8F0;
+}
+
+.infoContainer .specialCard{
+    background-color: #0d1117;
+    color:#E2E8F0;
+}
+
+/* space */
+
+/* APOD */
+.APODSection{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.APODSection > p{
+    font-size: 4rem;
+    font-weight: 800;
+    color:#ced0d3;
+    border: 1px solid #E2E8F0;
+    background:rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Asteroids */
+.asteroidSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 400px;
+    background: #0d1117;
+}
+.asteroidSection > h2{
+    background-image: url("https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000720/GSFC_20171208_Archive_e000720~orig.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.asteroidContainer{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2vw;
+    width: 100vw;
+    padding: 40px;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.asteroidCard{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #2E3A92;
+    background: #0d1117;
+    color:#ced0d3;
+    width: 25vw;
+    height: 65vh;
+    padding: 18px;
+}
+.asteroidCard > p{
+    font-size: 1.4rem;
+}
+.asteroidCard > .accent{
+    font-size: 1.8rem;
+}
+.hazardousAsteroid, .safeAsteroid{
+    font-weight: 700;
+    font-style: italic;
+}
+.hazardousAsteroid{
+    color:#852b1b;
+}
+.safeAsteroid{
+    color:#4a9b36;
+}
+.asteroidImage{
+    width: 15vw;
+    height: 12vw;
+}
+
+.asteroidPreview{
+    width: 100%;
+    font-size: 2rem;
+    gap: 30px;
+    background-color:#0d1117;
+    border: 3px solid #2E3A92;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}
+.previewImage{
+    width: 20vw;
+    height: 15vw;
+    border-radius: 20%;
+}
+.link{
+    font-size: 2rem;
+    align-self:flex-end;
+    color:#ced0d3;
+    position: absolute;
+    right: 5%;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.link:hover{
+    color:#2E3A92;
+}
+
+.asteroidSortMenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 30vw;
+    border: 3px solid #2E3A92;
+    background: #0d1117;
+    font-size: 1.5rem;
+    gap: 20px;
+    padding: 30px;
+}
+.asteroidSortContainer{
+    width: 100%;
+    height: 14vw;
+    display: flex;
+    border: 1px solid #2E3A92;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.sortBlock, .sortContainer{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sortContainer{
+    font-size: 1.3rem;
+    gap: 20px;
+}
+.confirmButton{
+    align-self: center;
+    border-radius: 8px;
+    padding: 8px 24px;
+    border: none;
+    background: #2E3A92;
+    color: white;
+    box-shadow: 0px 0px 3px 1px gray;
+    cursor: pointer;
+    font-size: 1.7rem;
+    font-weight: 800;
+    transition: box-shadow 0.3s;
+}
+.confirmButton:hover{
+    box-shadow: 1px 1px 5px 2px gray;
+}
+.loadingText{
+    font-size: 2.5rem;
+}
+
+/* news */
+.newsSection{
+    width: 100%;
+    height: auto;
+}
+.previewImg{
+    width: 14vw;
+    height: 12vw;
+    border-radius: 10px;
+}
+.previewCard{
+    background: #0d1117;
+    color: #ced0d3;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1rem;
+    gap: 30px;
+    padding: 15px;
+    border: 3px solid #2E3A92;
+    transition: border 0.3s;
+}
+.previewCard:hover{
+    border: 3px solid #ced0d3;
+}
+.previewCard:hover .previewText > h2{
+    color:#2E3A92;
+}
+.previewText > h2{
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+.previewText{
+    color: #ced0d3;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.previewText .link{
+    font-size: 2rem;
+    position: relative;
+    bottom: 0;
+}
+.previewCardsContainer{
+    min-height: 100px;
+    background: #0d1117;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.newsSortMenu > h2{
+    color: #E2E8F0;
+    font-size: 2.3rem;
+}
+.newsSortMenu{
+    padding: 30px;
+    width: 100%;
+    height: auto;
+    background: #0d1117;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.inputDateContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 2rem;
+}
+.newsSortContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    font-size: 1.9rem;
+}
+.article{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0px 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: #0d1117;
+    border: 3px solid #2E3A92;
+    border-top: none;
+    padding: 0 50px;
+    padding-bottom: 50px;
+}
+.article .link{
+    border: 3px solid #2E3A92;
+    padding: 20px;
+    font-size: 2rem;
+    position: relative;
+    left: 0;
+    top: 0;
+    align-self: center;
+}
+.infoArticleContainer{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.newsArticleImg{
+    width: 550px;
+    height: 550px;
+}
+.articleNewsText{
+    font-size: 1.4rem;
+}
+
+/* about */
+.infoSection{
+    width: 100%;
+    min-height: 500px;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    border: 3px solid #ced0d3;
+}
+.infoSectionHeader, .infoSectionText{
+    background:rgba(0, 0, 0, 0.4);
+    padding: 20px;
+}
+.infoSectionHeader{
+    color: #2E3A92;
+    font-size: 3rem;
+}
+.infoSectionText{
+    color:#ced0d3;
+    font-size: 2rem;
+}
+
+/* Auth */
+.formContainer{
+    background: #0d1117;
+    min-height: 80vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-bottom: 50px;
+}
+.form{
+    color: #ced0d3;
+    background: #0d1117;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 1px 1px 9px 4px gray;
+    width: 50vw;
+    margin: 0 auto;
+    border-radius: 12px;
+    max-width: 580px;
+}
+.formContainer .logo{
+    width: 18vw;
+    height: 15vw;
+    margin: 0 auto;
+}
+.authHeader{
+    text-align: center;
+}
+.inputContainer{
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    font-size: 1.8rem;
+    flex-direction: row-reverse;
+}
+.inputContainer input{
+    color: #2E3A92;
+    font-size: 1.3rem;
+    font-weight: 700;
+    width: 100%;
+}
+.messageContainer{
+    width: 100%;
+    padding: 10px;
+    font-size: 2rem;
+    border: 3px solid #2E3A92;
+    background: #3c4bb9;
+    text-align: center;
+}
+.loginButton, .logoutButton{
+    align-self: center;
+    border-radius: 8px;
+    padding: 8px 24px;
+    cursor: pointer;
+    color:#2E3A92;
+    background: #0d1117;
+    border: 3px solid #2E3A92;
+    transition: color 0.3s;
+}
+.logoutButton{
+    align-self: flex-start;
+}
+.loginButton:hover, .logoutButton:hover{
+    color:#ced0d3;
+}
+
+/* video */
+.videoArticle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    padding-top: 0;
+    background: #0d1117;
+    gap: 30px;
+    min-height: 80vh;
+}
+.videoArticle .header{
+    text-align: center;
+}
+.videoDescription{
+    font-size: 2rem;
+}
+.videoContainer{
+    box-shadow: 0px 1px 8px 2px #2E3A92;
+}
+.linkContainer .link{
+    position:static;
+}
+.linkContainer{
+    width: 26%;
+    height: 18%;
+    box-shadow: 0px 1px 8px 2px #2E3A92;
+    padding: 15px;
+}
+.errorText{
+    width: 100%;
+    font-size: 2.5rem;
+    background:#ff5132b4;
+    text-align: center;
+    padding: 15px;
+    font-style: italic;
+    box-shadow: 0px 1px 8px 2px #ced0d3;
+}
