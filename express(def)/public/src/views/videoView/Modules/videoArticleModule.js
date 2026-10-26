@@ -27,7 +27,9 @@ function createVideoArticle(videoURL, title, description){
             videoContainer.append(video)
             videoArticle.append(videoContainer)
         }else{
-            videoArticle.append(createEl("p", "Video is unavailable", "errorText"))
+            const errorImg = createEl("img", "", "kernelPanicImg")
+            errorImg.src = "../../../../images/kernelPanic.jpg"
+            videoArticle.append(errorImg)
         }
 
         videoArticle.append(createEl("p", description, "videoDescription"))

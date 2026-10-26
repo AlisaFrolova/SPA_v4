@@ -65,7 +65,7 @@ blue-10: #2E3A92 */
 .mainNav{
     width: 70%;
     height: 50%;
-    font-size: 1.5rem;
+    font-size: 2rem;
     display: flex;
     gap: 3vw;
     justify-content: center;
@@ -94,7 +94,7 @@ blue-10: #2E3A92 */
     top: 0;
     left: 40%;
     width: 24%;
-    height: 12%;
+    height: 10vw;
     background: #070707;
     box-shadow: 1px 1px 8px 2px #2E3A92;
     padding: 15px;
@@ -577,6 +577,9 @@ blue-10: #2E3A92 */
 }
 
 /* video */
+.videosSection{
+    background: #0d1117;
+}
 .videoArticle{
     display: flex;
     flex-direction: column;
@@ -606,12 +609,50 @@ blue-10: #2E3A92 */
     box-shadow: 0px 1px 8px 2px #2E3A92;
     padding: 15px;
 }
-.errorText{
+.kernelPanicImg{
     width: 100%;
-    font-size: 2.5rem;
-    background:#ff5132b4;
-    text-align: center;
+    height: 675px;
+    box-shadow: 0px 1px 8px 2px #2E3A92;
+}
+.searchBox{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 15px;
-    font-style: italic;
-    box-shadow: 0px 1px 8px 2px #ced0d3;
+    background: #0d1117;
+    justify-content: center;
+    align-items: center;
+}
+.searchInput{
+    font-size: 2rem;
+    background: #eef5ff;
+    width: 80%;
+    color:#2E3A92;
+    box-shadow: 0px 1px 8px 2px #2E3A92;
+}
+.searchLabel{
+    font-size: 2rem;
+}
+.navContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+    padding: 15px;
+    background: #0d1117;
+    width: 30vw;
+    margin: 0 auto;
+    box-shadow: 0px 1px 8px 2px #2E3A92;
+}
+.navButton, .currentPage{
+    color:#2E3A92;
+    box-shadow: 0px 1px 8px 2px #2E3A92;
+    font-size: 1rem;
+    padding: 10px;
+    background: #0d1117;
+    cursor: pointer;
+}
+.navContainer > .currentPage{
+    color: #E2E8F0;
+    box-shadow: 0px 1px 8px 2px #E2E8F0;
 }

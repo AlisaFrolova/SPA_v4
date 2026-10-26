@@ -26,13 +26,17 @@ export async function getAsteroids(startDate, endDate){ //date format is the sam
     }
 }
 
-export async function getVideos(numberOfVideos, theme){ //works ~~
+export async function getVideos(numberOfVideos, theme, pageNumber){
     try{
-        const response = await fetch(`https://images-api.nasa.gov/search?q=${encodeURI(theme)}&media_type=video&page_size=${numberOfVideos}`)
+        const response = await fetch(`https://images-api.nasa.gov/search?q=${encodeURI(theme)}&media_type=video&page_size=${numberOfVideos}&page=${pageNumber}`)
         if(!response.ok){
             throw new Error(`Error: ${response.status}`)
         }
         const data = await response.json()
+
+        localStorage.setItem("pageNumber", 1)
+        localStorage.setItem("maxPageNumber", Math.ceil(data.collection.metadata.total_hits/10))
+
         const videos = data.collection.items
         return videos.slice(0, numberOfVideos)
     } catch(error){
