@@ -1,6 +1,7 @@
 import { createEl } from "../../../tools.js"
 import { getVideos } from "../../../NasaApi.js"
 import spawnVideoCards from "../Components/spawnVideoCards.js"
+import spawnNav from "../Components/videoNavigation.js"
 
 export default function spawnVideosSection(){
     const cardsContainer = document.querySelector(".previewCardsContainer")
@@ -9,16 +10,23 @@ export default function spawnVideosSection(){
     const loadingText = createEl("p", "Loading videos...", "loadingText")
     cardsContainer.append(loadingText)
 
-    const theme = localStorage.getItem("videoTheme")
-    let pageNumber = localStorage.getItem("pageNumber")
-    if(pageNumber === null) pageNumber = 1 //smth with pageNumber
+    let pageNumber = parseInt(localStorage.getItem("pageNumber"))
 
-    getVideos(10, theme, pageNumber).then(data => { //nf (?)
-        const dataJSON = JSON.stringify(data)
-        localStorage.setItem("videoArticles", dataJSON)
-        localStorage.setItem("pageNumber", pageNumber)
-        
+    let theme = localStorage.getItem("videoTheme")
+    let prevTheme = localStorage.getItem("prevVideoTheme")
+    localStorage.setItem("prevVideoTheme", theme)
+    if(prevTheme !== theme) pageNumber = 1
+
+    getVideos(10, theme, pageNumber).then(data => {
         loadingText.remove()
-        spawnVideoCards(cardsContainer)
+        if(data){
+            spawnVideoCards(cardsContainer)
+            localStorage.setItem("pageNumber", pageNumber)
+            spawnNav()
+        }else{
+            const errorImg = createEl("img", "", "kernelPanicImg")
+            errorImg.src = "../../../../images/kernelPanic.jpg"
+            cardsContainer.append(errorImg)
+        }
     })
 }

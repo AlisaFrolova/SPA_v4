@@ -34,13 +34,14 @@ export async function getVideos(numberOfVideos, theme, pageNumber){
         }
         const data = await response.json()
 
-        localStorage.setItem("pageNumber", 1)
+        const dataJSON = JSON.stringify(data.collection.items)
+        localStorage.setItem("videoArticles", dataJSON)
+        
         localStorage.setItem("maxPageNumber", Math.ceil(data.collection.metadata.total_hits/10))
 
-        const videos = data.collection.items
-        return videos.slice(0, numberOfVideos)
+        return true
     } catch(error){
         console.log(error)
-        return []
+        return false
     }
 }
