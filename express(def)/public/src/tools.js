@@ -58,13 +58,12 @@ export function getValueFromLocalStorage(key){
 }
 
 export function spawnLogoutButton(){
-    const authLink = document.querySelector("#authLink") //I ->
-    if(authLink) authLink.remove() //I ->
+    const authLink = document.querySelector("#authLink") 
+    if(authLink) authLink.remove() 
     const form = document.querySelector(".form")
     if(form) form.remove()
 
     const logoutButton = createEl("button", "Log out", "logoutButton")
-    // document.querySelector(".header").append(logoutButton) //!
     logoutButton.addEventListener("click", () => {
         tokenData.clearTokens().then(res => {
             if(res){
@@ -92,8 +91,11 @@ export function createPreviewCard(imgURL, title, description, id, href){
     
     textBlock.append(createEl("p", `${description} ... `, "text"))
 
-    const articleLink = createEl("a", " Read more...", "link")
-    articleLink.href = href // !
+    const articleLink = createEl("a", "Read more...", "link")
+    if(href === "/video/article"){
+        articleLink.textContent = "Watch..."
+    }
+    articleLink.href = href
     articleLink.setAttribute("data-link", "")
     textBlock.append(articleLink)
     

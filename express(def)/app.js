@@ -3,7 +3,7 @@ const path = require("path");
 const cors = require("cors");
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const { createUser, findUser, getUsers } = require('./users');
+const { createUser, findUser, getUsers, generateStaticUsers } = require('./users');
 const cookieParser = require("cookie-parser")
 
 const ACCESS_SECRET = 'mySecretWord1'
@@ -28,6 +28,12 @@ app.use((req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Server launched on http://localhost:${PORT}`);
 });
+
+
+app.get("/api/spawn", async (req, res) => {
+  await generateStaticUsers()
+  res.status(200).json({message: "Static users were created"})
+})
 
 
 //register
@@ -128,5 +134,3 @@ app.post("/api/isAuth", (req, res) => {
 app.get('/api/username', authMiddleware, (req, res) => {
   res.json({ username: req.user.username })
 })
-//user: wra1th  pass: 1q2w3e
-//user: wra11tthh  pass: 0p9o8i

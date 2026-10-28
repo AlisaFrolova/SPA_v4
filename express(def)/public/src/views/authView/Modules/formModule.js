@@ -4,6 +4,8 @@ import { login } from "../Components/registerAndLogin.js"
 import createInputBlock from "../Components/createInputBlock.js"
 
 export default function spawnForm(){
+    fetch("/api/spawn",{ method: 'GET', headers: { 'Content-Type': 'application/json' }})
+    
     const formContainer = createEl("section", "", "formContainer")
 
     //form
